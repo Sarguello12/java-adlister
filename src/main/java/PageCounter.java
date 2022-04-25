@@ -12,12 +12,12 @@ public class PageCounter extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String reset = req.getQueryString();
 
-        if(isNull(reset)){
+        if(isNull(req.getQueryString())){
             counter++;
         } else {
             counter = 0;
+            resp.sendRedirect("/counter");
         }
 
         resp.getWriter().println("Page viewed " + counter + " times.");

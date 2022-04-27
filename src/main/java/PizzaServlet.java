@@ -25,6 +25,6 @@ public class PizzaServlet extends HttpServlet {
         RequestDispatcher view = req.getRequestDispatcher("/pizza-order.jsp");
         view.forward(req, resp);
 
-        System.out.println(size + ", " + crust + ", " + sauce + ", " + Arrays.toString(topping));
+        System.out.println(size + ", " + crust + ", " + sauce + "," + Arrays.toString(topping));
     }
 }

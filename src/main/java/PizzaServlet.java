@@ -14,6 +14,7 @@ public class PizzaServlet extends HttpServlet {
         String size = req.getParameter("pizza-size");
         String crust = req.getParameter("crust-type");
         String sauce = req.getParameter("sauce-type");
+        String address = req.getParameter("address");
         String[] topping = req.getParameterValues("topping");
 
 
@@ -21,10 +22,11 @@ public class PizzaServlet extends HttpServlet {
         req.setAttribute("crust-type", crust);
         req.setAttribute("sauce-type", sauce);
         req.setAttribute("topping", topping);
+        req.setAttribute("address", address);
 
         RequestDispatcher view = req.getRequestDispatcher("/pizza-order.jsp");
         view.forward(req, resp);
 
-        System.out.println(size + ", " + crust + ", " + sauce + "," + Arrays.toString(topping));
+        System.out.println(size + ", " + crust + ", " + sauce + ", " + Arrays.toString(topping) + ", and deliver to: " + address);
     }
 }

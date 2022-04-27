@@ -29,7 +29,7 @@
         <option value="deep-dish">Deep Dish</option>
     </select>
     <br><br>
-    <label for="sauce-type">Size:</label>
+    <label for="sauce-type">Sauce:</label>
     <select name = "sauce-type" id="sauce-type">
         <option value="traditional">Traditional</option>
         <option value="bbq">BBQ</option>
@@ -41,7 +41,11 @@
     <input type="checkbox" id="topping2" name="topping" value="sausage">
     <label for="topping2"> Sausage</label><br>
     <input type="checkbox" id="topping3" name="topping" value="chicken">
-    <label for="topping3"> Chicken</label><br>
+    <label for="topping3"> Chicken</label>
+    <br><br>
+    <label for="address">Address:</label>
+    <input type="text" name="address" id="address">
+    <br>
     <button type="submit">Submit</button>
 </form>
 </body>

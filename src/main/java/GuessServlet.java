@@ -24,9 +24,9 @@ public class GuessServlet extends HttpServlet {
 
 //        if(userGuess <= 3 && userGuess >= 1){
             if(userGuess == randomNum) {
-                resp.sendRedirect("/ConfirmationServlet");
+                resp.sendRedirect("/correct");
             } else {
-                resp.sendRedirect("/RejectionServlet");
+                resp.sendRedirect("/reject");
             }
 //        } else {
 //            resp.sendRedirect("/GuessServlet");

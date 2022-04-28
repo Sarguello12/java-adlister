@@ -5,10 +5,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ConfirmationServlet", urlPatterns = "/ConfirmationServlet")
+@WebServlet(name = "ConfirmationServlet", urlPatterns = "/correct")
 public class ConfirmationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/confirmation.jsp").forward(req, resp);
+        req.setAttribute("result", true);
+        req.getRequestDispatcher("/result.jsp").forward(req, resp);
     }
 }

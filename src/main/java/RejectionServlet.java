@@ -6,10 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "RejectionServlet", urlPatterns = "/RejectionServlet")
+@WebServlet(name = "RejectionServlet", urlPatterns = "/reject")
 public class RejectionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/rejection.jsp").forward(req, resp);
+        req.setAttribute("result", false);
+        req.getRequestDispatcher("/result.jsp").forward(req, resp);
     }
 }

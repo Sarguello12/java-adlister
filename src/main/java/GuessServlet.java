@@ -21,8 +21,16 @@ public class GuessServlet extends HttpServlet {
         int randomNum = random.nextInt(max + min) + min;
 
         int userGuess = Integer.parseInt(req.getParameter("guess"));
-        if(userGuess == randomNum) {
-            resp.sendRedirect("/ConfirmationServlet");
-        }
+
+//        if(userGuess <= 3 && userGuess >= 1){
+            if(userGuess == randomNum) {
+                resp.sendRedirect("/ConfirmationServlet");
+            } else {
+                resp.sendRedirect("/RejectionServlet");
+            }
+//        } else {
+//            resp.sendRedirect("/GuessServlet");
+//        }
+
     }
 }

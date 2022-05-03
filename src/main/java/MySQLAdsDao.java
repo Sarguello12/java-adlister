@@ -1,4 +1,4 @@
-import com.mysql.jdbc.Driver;
+import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,9 +11,9 @@ public class MySQLAdsDao implements Ads{
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/adlister_db?allowPublicKeyRetrieval=true&useSSL=false",
-                    "root",
-                    "codeup-1"
+                    config.getUrl(),
+                    config.getUsername(),
+                    config.getPassword()
             );
         } catch(SQLException sqle){
             sqle.printStackTrace();

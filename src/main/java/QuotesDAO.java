@@ -49,9 +49,10 @@ public class QuotesDAO implements Quotes{
         return null;
     }
 
-
     @Override
-    public void insert(Quote quote) {
-
+    public long insert(Quote quote) {
+        return 0;
     }
+
+
 }

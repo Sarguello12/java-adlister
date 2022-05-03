@@ -5,5 +5,5 @@ public interface Authors {
 
     Author getAuthorByID(long id);
 
-    void insert(Author author);
+    long insert(Author author);
 }

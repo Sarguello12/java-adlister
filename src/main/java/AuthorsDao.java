@@ -61,7 +61,18 @@ public class AuthorsDao implements Authors{
     }
 
     @Override
-    public void insert(Author author){
-
+    public long insert(Author author){
+        String author_name = author.getAuthor_name();
+        String query = "INSERT INTO codeup_test_db.authors (author_name) VALUES ('" + author_name + "')";
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+            ResultSet resultSet = statement.getGeneratedKeys();
+            resultSet.next();
+            long key = resultSet.getLong(1);
+            return key;
+        } catch (SQLException sqle) {
+            throw new RuntimeException("error connecting to db", sqle);
+        }
     }
 }

@@ -18,7 +18,6 @@ public class MySQLUsersDao implements Users{
                     config.getUser(),
                     config.getPassword()
             );
-
         } catch(SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
         }
@@ -33,7 +32,12 @@ public class MySQLUsersDao implements Users{
             preparedStatement.setString(1, searchTerm);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()){
-                return new User(rs.getLong("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"));
+                return new User(
+                        rs.getLong("id"),
+                        rs.getString("username"),
+                        rs.getString("email"),
+                        rs.getString("password")
+                );
             } else {
                 return null;
             }
